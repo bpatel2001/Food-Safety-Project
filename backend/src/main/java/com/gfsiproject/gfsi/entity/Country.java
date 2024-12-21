@@ -2,11 +2,11 @@ package com.gfsiproject.gfsi.entity;
 
 public class Country {
     private String country;
-    private int overall;
-    private int affordability;
-    private int availability;
-    private int quality;
-    private int sustainability;
+    private double overall;
+    private double affordability;
+    private double availability;
+    private double quality;
+    private double sustainability;
     private int overallrank;
     private int affordabilityrank;
     private int availabilityrank;
@@ -21,43 +21,43 @@ public class Country {
         this.country = country;
     }
 
-    public int getOverall() {
+    public double getOverall() {
         return overall;
     }
 
-    public void setOverall(int overall) {
+    public void setOverall(double overall) {
         this.overall = overall;
     }
 
-    public int getAffordability() {
+    public double getAffordability() {
         return affordability;
     }
 
-    public void setAffordability(int affordability) {
+    public void setAffordability(double affordability) {
         this.affordability = affordability;
     }
 
-    public int getAvailability() {
+    public double getAvailability() {
         return availability;
     }
 
-    public void setAvailability(int availability) {
+    public void setAvailability(double availability) {
         this.availability = availability;
     }
 
-    public int getQuality() {
+    public double getQuality() {
         return quality;
     }
 
-    public void setQuality(int quality) {
+    public void setQuality(double quality) {
         this.quality = quality;
     }
 
-    public int getSustainability() {
+    public double getSustainability() {
         return sustainability;
     }
 
-    public void setSustainability(int sustainability) {
+    public void setSustainability(double sustainability) {
         this.sustainability = sustainability;
     }
 
@@ -101,7 +101,7 @@ public class Country {
         this.sustainabilityrank = sustainabilityrank;
     }
     
-    public Country(String country, int overall, int affordability, int availability, int quality, int sustainability, int overallrank, int affordabilityrank, int availabilityrank, int qualityrank, int sustainabilityrank) {
+    public Country(String country, double overall, double affordability, double availability, double quality, double sustainability, int overallrank, int affordabilityrank, int availabilityrank, int qualityrank, int sustainabilityrank) {
         super();
         this.country = country;
         this.overall = overall;

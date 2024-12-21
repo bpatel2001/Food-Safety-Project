@@ -30,17 +30,17 @@ public class CountryServiceImpl implements CountryService {
     @SuppressWarnings("CallToPrintStackTrace")
     public List<Country> getCountryData() {
         try {
-            PreparedStatement stmt = connection.prepareStatement("SELECT * FROM COUNTRYDATA");
+            PreparedStatement stmt = connection.prepareStatement("SELECT * FROM COUNTRIES");
             ResultSet rs = stmt.executeQuery();
 
             while(rs.next()){
                 Country country = new Country();
                 country.setCountry(rs.getString(1));
-                country.setOverall(rs.getInt(2));
-                country.setAffordability(rs.getInt(3));
-                country.setAvailability(rs.getInt(4));
-                country.setQuality(rs.getInt(5));
-                country.setSustainability(rs.getInt(6));
+                country.setOverall(rs.getDouble(2));
+                country.setAffordability(rs.getDouble(3));
+                country.setAvailability(rs.getDouble(4));
+                country.setQuality(rs.getDouble(5));
+                country.setSustainability(rs.getDouble(6));
                 country.setOverallrank(rs.getInt(7));
                 country.setAffordabilityrank(rs.getInt(8));
                 country.setAvailabilityrank(rs.getInt(9));
