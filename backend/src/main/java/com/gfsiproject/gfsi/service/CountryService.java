@@ -9,4 +9,5 @@ import com.gfsiproject.gfsi.entity.Country;
 @Repository
 public interface CountryService {
     public List<Country> getCountryData();
+    public Country getCountryByName(String countryName);
 }

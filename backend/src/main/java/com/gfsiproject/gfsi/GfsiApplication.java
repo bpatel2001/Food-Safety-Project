@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GfsiApplication {
 
-	@GetMapping("/helloworld")
-	public String helloWorld() {
-		return "Hello World";
-	}	
+	@GetMapping("/")
+	public String APIConnection() {
+		return "API Connected";
+	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(GfsiApplication.class, args);

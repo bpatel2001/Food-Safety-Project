@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gfsiproject.gfsi.entity.Country;
@@ -21,4 +22,8 @@ public class CountryController {
         return this.countryservice.getCountryData();
     }
 
+    @GetMapping("/countries/{country_name}")
+    public Country getCountriesByName(@PathVariable String country_name){
+        return this.countryservice.getCountryByName(country_name);
+    }
 }

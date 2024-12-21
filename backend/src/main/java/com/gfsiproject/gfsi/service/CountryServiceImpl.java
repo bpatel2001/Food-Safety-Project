@@ -53,4 +53,16 @@ public class CountryServiceImpl implements CountryService {
         }
         return countrylist;
     }
+    
+    @Override
+    public Country getCountryByName(String countryName) {
+        List<Country> countries = getCountryData();
+        for (Country country : countries) {
+            if (country.getCountry().equals(countryName)) {
+                return country;
+            }
+        }
+        return null; // or throw an exception if country not found
+    }
 }
+
