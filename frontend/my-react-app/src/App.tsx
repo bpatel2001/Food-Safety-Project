@@ -32,14 +32,23 @@ function App() {
   return (
     <>
       <div>
-        <p className="text-blue-100 bg-blue-500 text-4xl">Hello</p>
-        <select className="border rounded p-2">
-          {countries.map((country, index) => (
-            <option key={index} value={country.country}>
-              {country.country}
-            </option>
-          ))}
-        </select>
+        <p className="text-blue-100 bg-blue-500 text-4xl">Food Safety Viewer</p>
+        <div>
+          <div className="flex justify-center">
+            <select className="border rounded p-2">
+              {countries.map((country, index) => (
+                <option key={index} value={country.country}>
+                  {country.country}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="flex justify-center">
+            <button className="border rounded p-2">
+              Submit
+            </button>
+          </div>
+        </div>
       </div>
     </>
   );
