@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function App() {
   interface CountryData {
@@ -16,6 +17,14 @@ function App() {
     sustainabilityrank: number;
   }
 
+  const navigate = useNavigate();
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const selectedCountry = (e.target as HTMLFormElement).country.value;
+    navigate(`/result?country=${selectedCountry}`);
+  }
+
   const [countries, setCountries] = useState<CountryData[]>([]);
 
   useEffect(() => {
@@ -27,15 +36,15 @@ function App() {
       .catch((error) => {
         console.error("Error fetching countries:", error);
       });
-  }, []);
+  }, [countries]);
 
   return (
     <>
       <div>
         <p className="text-blue-100 bg-blue-500 text-4xl">Food Safety Viewer</p>
-        <div>
+        <form onSubmit={handleSubmit}>
           <div className="flex justify-center">
-            <select className="border rounded p-2">
+            <select name = "country"className="border rounded p-2">
               {countries.map((country, index) => (
                 <option key={index} value={country.country}>
                   {country.country}
@@ -44,11 +53,11 @@ function App() {
             </select>
           </div>
           <div className="flex justify-center">
-            <button className="border rounded p-2">
+            <button type = "submit" className="border rounded p-2">
               Submit
             </button>
           </div>
-        </div>
+        </form>
       </div>
     </>
   );

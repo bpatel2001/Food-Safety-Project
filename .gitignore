@@ -1,2 +1,3 @@
 .vscode/
 .gradle/
+.node_modules/
