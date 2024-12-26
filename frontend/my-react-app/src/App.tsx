@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useRef } from "react";
 
 function App() {
   interface CountryData {
@@ -28,15 +29,22 @@ function App() {
   const [countries, setCountries] = useState<CountryData[]>([]);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:8080/countries") 
-      .then((response) => {
-        setCountries(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching countries:", error);
-      });
-  }, [countries]);
+    const storedCountries = localStorage.getItem("countries");
+    if (storedCountries) {
+      setCountries(JSON.parse(storedCountries));
+    } else {
+      axios
+        .get("http://localhost:8080/countries")
+        .then((response) => {
+          setCountries(response.data);
+          localStorage.setItem("countries", JSON.stringify(response.data));
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.error("Error fetching countries:", error);
+        });
+    }
+  }, []);
 
   return (
     <>

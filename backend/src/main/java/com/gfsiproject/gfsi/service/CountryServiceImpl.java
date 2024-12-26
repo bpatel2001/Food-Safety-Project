@@ -30,6 +30,7 @@ public class CountryServiceImpl implements CountryService {
     @SuppressWarnings("CallToPrintStackTrace")
     public List<Country> getCountryData() {
         try {
+            countrylist.clear();
             PreparedStatement stmt = connection.prepareStatement("SELECT * FROM COUNTRIES");
             ResultSet rs = stmt.executeQuery();
 
