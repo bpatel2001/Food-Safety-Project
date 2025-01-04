@@ -35,6 +35,8 @@ function Result() {
 
     console.log(countryData?.overall); // Use optional chaining to avoid null errors
 
+    //For next time, the max value of the overall is 83.7 while the min is 36.3
+
     return (
         <div>
             <h1>Result for {country}</h1>
