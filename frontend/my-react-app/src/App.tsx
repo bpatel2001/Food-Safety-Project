@@ -3,6 +3,10 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 function App() {
+  useEffect(() => {
+    console.log("Rendering App...");
+  }, []);
+
   interface CountryData {
     country: string;
     overall: number;
@@ -33,6 +37,7 @@ function App() {
       setCountries(JSON.parse(storedCountries));
       console.log(storedCountries);
     } else {
+      console.log("Fetching countries...");
       axios
         .get("http://localhost:8080/countries")
         .then((response) => {
