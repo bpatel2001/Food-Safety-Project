@@ -17,7 +17,7 @@ function Result() {
         sustainabilityrank: number;
     }
 
-    const [countryData, setCountryData] = useState<CountryData | null>(null); // Use a single object
+    const [countryData, setCountryData] = useState<CountryData | null>(null); 
 
     const location = useLocation();
     const country = location.search.split('=')[1];
@@ -26,16 +26,14 @@ function Result() {
         axios
           .get(`http://localhost:8080/countries/${country}`) 
           .then((response) => {
-            setCountryData(response.data); // Set the response directly
+            setCountryData(response.data); 
           })
           .catch((error) => {
             console.error("Error fetching country data:", error);
           });
       }, [country]);
 
-    console.log(countryData?.overall); // Use optional chaining to avoid null errors
-
-    //For next time, the max value of the overall is 83.7 while the min is 36.3
+    console.log(countryData?.overall); 
 
     return (
         <div>
