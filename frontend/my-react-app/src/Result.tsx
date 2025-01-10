@@ -40,16 +40,16 @@ function Result() {
             <h1>Result for {country}</h1>
             {countryData && (
                 <div>
-                    <p>Overall: {countryData.overall}</p>
-                    <p>Affordability: {countryData.affordability}</p>
-                    <p>Availability: {countryData.availability}</p>
-                    <p>Quality: {countryData.quality}</p>
-                    <p>Sustainability: {countryData.sustainability}</p>
-                    <p>Overall Rank: {countryData.overallrank}</p>
-                    <p>Affordability Rank: {countryData.affordabilityrank}</p>
-                    <p>Availability Rank: {countryData.availabilityrank}</p>
-                    <p>Quality Rank: {countryData.qualityrank}</p>
-                    <p>Sustainability Rank: {countryData.sustainabilityrank}</p>
+                    <p>Overall ranking of the country: {countryData.overallrank}</p>
+                    <p>This is an overall x Score</p>
+                    <p>Quality ranking of the country: {countryData.qualityrank}</p>
+                    <p>This is a quality x Score</p>
+                    <p>Sustainability ranking of the country: {countryData.sustainabilityrank}</p>
+                    <p>This is a sustainability x Score</p>
+                    <p>Affordability ranking of the country: {countryData.affordabilityrank}</p>
+                    <p>This is an affordability x Score</p>
+                    <p>Availability ranking of the country: {countryData.availabilityrank}</p>
+                    <p>This is an availability x Score</p>
                 </div>
             )}
         </div>
