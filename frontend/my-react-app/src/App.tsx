@@ -38,7 +38,7 @@ function App() {
         localStorage.removeItem("countries"); 
       }
     } else {
-      console.log("Fetching countries...");
+      console.log("Fetching countries..");
       axios
         .get("http://localhost:8080/countries")
         .then((response) => {
